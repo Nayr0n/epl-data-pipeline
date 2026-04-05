@@ -31,3 +31,42 @@ Crucially, it handles **data enrichment** by merging dynamic REST API data with 
 ├── teams_info.json     # Local static metadata source
 ├── requirements.txt    # Python dependencies
 └── README.md           # Project documentation
+```
+
+## ⚙️ Setup and Installation
+
+**1. Clone the repository:**
+```bash
+git clone [https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git](https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git)
+cd YOUR_REPOSITORY_NAME
+```
+
+**2. Install required dependencies:**
+```bash
+pip install -r requirements.txt
+```
+
+**3. API Key Configuration:**
+- Get a free API key from [football-data.org](https://www.football-data.org/).
+- Open `script.py` and replace `YOUR_API_KEY_HERE` with your actual key.
+
+## 🏃‍♂️ How to Run
+
+**Step 1: Run the ETL Pipeline**
+Execute the script to fetch latest data, process it, and update the database:
+```bash
+python script.py
+```
+*(You should see success messages in the terminal confirming data extraction, transformation, and database loading).*
+
+**Step 2: Launch the Dashboard**
+Start the Streamlit web application:
+```bash
+python -m streamlit run app.py
+```
+The dashboard will open automatically in your default web browser (usually at `http://localhost:8501`).
+
+## 📈 Future Improvements
+- Containerize the application using **Docker**.
+- Implement a task scheduler (e.g., **Cron** or **Apache Airflow**) to automate the ETL script execution after match days.
+- Add real-time top scorer and injury statistics via additional APIs.
